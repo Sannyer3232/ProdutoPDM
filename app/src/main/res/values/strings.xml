@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Produtos</string>
+    <string name="res_codigo">Code</string>
+    <string name="res_name">Name</string>
+    <string name="res_phone">Phone</string>
+    <string name="res_email">E-mail</string>
+    <string name="res_address">Postal Address</string>
+</resources>
