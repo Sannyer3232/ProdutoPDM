@@ -1,4 +1,5 @@
 package br.edu.ifam.tads.produtos.recycler;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -31,19 +32,16 @@ public class FornecedorAdapter extends RecyclerView.Adapter<FornecedorAdapter.Fo
         return new FornecedorViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     public void onBindViewHolder(@NonNull FornecedorViewHolder holder, int position) {
         Fornecedor fornecedor = fornecedores.get(position);
-        holder.tvCodigo.setText(String.valueOf(fornecedor.getCodigo()));
-        holder.tvNome.setText(fornecedor.getNome());
+        holder.tvCodigo.setText(holder.tvCodigo.getText().toString() + " " + String.valueOf(fornecedor.getCodigo()));
+        holder.tvNome.setText(holder.tvNome.getText().toString() + " " + fornecedor.getNome());
 
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, FornecedorDetalhesActivity.class);
-            intent.putExtra("codigo", fornecedor.getCodigo());
-            intent.putExtra("nome", fornecedor.getNome());
-            intent.putExtra("email", fornecedor.getEmail());
-            intent.putExtra("telefone", fornecedor.getTelefone());
-            intent.putExtra("endereco", fornecedor.getEndereco());
+            intent.putExtra("id", fornecedor.getId());
             context.startActivity(intent);
         });
     }
