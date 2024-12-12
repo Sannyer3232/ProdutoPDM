@@ -43,6 +43,7 @@ public class FornecedorDetalhesActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
         fornecedorDAO = new FornecedorDAO(this);
 
         etFornecedorCodigo = findViewById(R.id.etFornecedorCodigo);
@@ -50,6 +51,7 @@ public class FornecedorDetalhesActivity extends AppCompatActivity {
         etFornecedorTelefone = findViewById(R.id.etFornecedorPhone);
         etFornecedorEmail = findViewById(R.id.etFornecedorEmail);
         etFornecedorEndereco = findViewById(R.id.etFornecedorAddress);
+
         ibSaveFornecedor = findViewById(R.id.ibSaveFornecedor);
         ibDeleteFornecedor = findViewById(R.id.ibDeleteFornecedor);
         ibClearFornecedor = findViewById(R.id.ibClearFornecedor);
