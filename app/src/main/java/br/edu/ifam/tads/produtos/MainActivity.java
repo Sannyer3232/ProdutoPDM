@@ -1,6 +1,8 @@
 package br.edu.ifam.tads.produtos;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -47,7 +49,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        adapter = new FornecedorAdapter(fornecedorDAO.getFornecedor(), this);
+        adapter = new FornecedorAdapter(fornecedorDAO.getFornecedor(),
+                this);
         recyclerView.setAdapter(adapter);
+    }
+    public void addFornecedorOnClick(View view){
+        Intent intent = new Intent(this, FornecedorDetalhesActivity.class);
+        startActivity(intent);
     }
 }
