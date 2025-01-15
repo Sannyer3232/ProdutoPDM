@@ -3,6 +3,7 @@ package br.edu.ifam.tads.produtos;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private FornecedorAdapter adapter;
     private List<Fornecedor> fornecedores;
+    private ProgressBar progressBarMain;
 
     private FornecedorDAO fornecedorDAO;
 
@@ -42,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         recyclerView = findViewById(R.id.recyclerView);
+        progressBarMain = findViewById(R.id.progressBarMain);
+        progressBarMain.setVisibility(View.INVISIBLE);
+
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
@@ -57,4 +62,6 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, FornecedorDetalhesActivity.class);
         startActivity(intent);
     }
+
+
 }
